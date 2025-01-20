@@ -1,6 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Calendar, Clock, ChevronRight } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const articles = [
   {
@@ -36,20 +42,40 @@ const articles = [
     readTime: "6 min read",
     link: "/blog/introduction-to-typescript",
   },
+  {
+    id: 4,
+    title: "Introduction to TypeScript",
+    excerpt:
+      "A beginner's guide to using TypeScript in your JavaScript projects.",
+    image: "/tile_reg.jpg",
+    author: "Alice Johnson",
+    date: "2023-05-05",
+    readTime: "6 min read",
+    link: "/blog/introduction-to-typescript",
+  },
 ];
 
 export default function ArticlesSection() {
   return (
-    <section className="py-16  from-white to-gray-50">
-      <div className="container mx-auto ">
+    <section className="py-16 ">
+      <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Latest Articles
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map((article) => (
-            <ArticleItem key={article.id} {...article} />
-          ))}
-        </div>
+        <Carousel className="w-full max-w-5xl mx-auto">
+          <CarouselContent>
+            {articles.map((article) => (
+              <CarouselItem
+                key={article.id}
+                className="md:basis-1/2 lg:basis-1/3"
+              >
+                <ArticleItem key={article.id} {...article} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
       </div>
     </section>
   );
@@ -73,35 +99,30 @@ export function ArticleItem({
   link: string;
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="bg-white border rounded-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
       <Image
         src={image || "/placeholder.svg"}
         alt={title}
         width={300}
         height={200}
-        className="w-full  h-[200px] object-cover"
+        className="w-full h-[200px] p-3 object-cover"
       />
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>
-        <p className="text-gray-600 mb-4">{excerpt}</p>
+      <div className="p-3">
+        <h3 className="text-xl font-semibold mb-2 text-gray-800 h-[60px] ">{title}</h3>
+        <p className="text-gray-600 mb-4 h-[70px] ">{excerpt}</p>
         <div className="flex flex-col gap-1 text-sm text-gray-500 mb-4">
-          <span className="mr-4">{author}</span>
-          <span className="flex items-center mr-4">
-            <Calendar size={14} className="mr-1" />
-            {new Date(date).toLocaleDateString()}
-          </span>
-          <span className="flex items-center">
-            <Clock size={14} className="mr-1" />
-            {readTime}
-          </span>
+          <span className=" font-bold ">{author}</span>
+          <div className=" flex text-sm gap-1 items-center ">
+            <span className="flex items-center">
+              <Calendar size={14} className="mr-1" />
+              {new Date(date).toLocaleDateString()}
+            </span>
+            <span className="flex items-center">
+              <Clock size={14} className="mr-1" />
+              {readTime}
+            </span>
+          </div>
         </div>
-        <Link
-          href={link}
-          className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
-        >
-          Read More
-          <ChevronRight size={16} className="ml-1" />
-        </Link>
       </div>
     </div>
   );

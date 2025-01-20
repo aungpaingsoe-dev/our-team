@@ -50,7 +50,7 @@ function ServiceItem({
   icon: any;
 }) {
   return (
-    <div className="bg-white border rounded-lg shadow-sm overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="bg-white border rounded-md hover:border-black">
       <div className="p-6">
         <div className="text-4xl mb-4">{icon}</div>
         <h3 className="text-xl font-semibold mb-2 text-gray-800">{title}</h3>

@@ -99,7 +99,7 @@ export default function TeamSection() {
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Our Team
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           {teamMembers.map((member, index) => (
             <TeamItem key={index} {...member} />
           ))}
@@ -127,7 +127,7 @@ function TeamItem({
   };
 }) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+    <div className="bg-white border rounded-md hover:border-black">
       <div className="p-6 flex flex-col items-center text-center">
         <Image
           width={120}
