@@ -20,8 +20,8 @@ export default function ServiceSection() {
   ];
 
   return (
-    <section className="py-16  from-white to-gray-50">
-      <div className="container mx-auto">
+    <section className="my-16"> 
+      <div>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Our Services
         </h2>

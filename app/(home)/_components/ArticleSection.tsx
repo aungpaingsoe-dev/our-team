@@ -57,12 +57,12 @@ const articles = [
 
 export default function ArticlesSection() {
   return (
-    <section className="py-16 ">
-      <div className="container mx-auto px-4">
+    <section className=" mb-16 ">
+      <div>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Latest Articles
         </h2>
-        <Carousel className="w-full max-w-5xl mx-auto">
+        <Carousel className="w-full max-w-full mx-auto relative">
           <CarouselContent>
             {articles.map((article) => (
               <CarouselItem
@@ -73,8 +73,8 @@ export default function ArticlesSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className=" absolute lg:start-[-25] start-[-5px] w-[50px] h-[50px] " />
+          <CarouselNext className=" absolute lg:end-[-25] end-[-5px] w-[50px] h-[50px] " />
         </Carousel>
       </div>
     </section>

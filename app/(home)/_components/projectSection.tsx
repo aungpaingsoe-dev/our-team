@@ -1,4 +1,4 @@
-import {  ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const projects = [
@@ -33,12 +33,12 @@ const projects = [
 
 export function ProjectsSection() {
   return (
-    <section className="py-16">
-      <div className="container mx-auto ">
+    <section className="my-16">
+      <div>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Our Projects
         </h2>
-        <div className="grid grid-cols-2 gap-14">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-14">
           {projects.map((project) => (
             <ProjectItem key={project.id} {...project} />
           ))}
@@ -62,7 +62,7 @@ function ProjectItem({
   link: string;
 }) {
   return (
-    <div >
+    <div>
       <Image
         src={image || "/placeholder.svg"}
         alt={title}

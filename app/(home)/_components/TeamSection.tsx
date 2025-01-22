@@ -94,12 +94,12 @@ const teamMembers = [
 
 export default function TeamSection() {
   return (
-    <section className="py-16 from-white to-gray-50">
-      <div className="container mx-auto">
+    <section>
+      <div>
         <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
           Our Team
         </h2>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {teamMembers.map((member, index) => (
             <TeamItem key={index} {...member} />
           ))}

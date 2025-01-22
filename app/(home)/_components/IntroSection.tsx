@@ -3,9 +3,9 @@ import { UsersRound, Laugh, FileCheck } from "lucide-react";
 
 export default function IntroSection() {
   return (
-    <section className=" w-[50%] mx-auto text-center">
-      <div className=" flex flex-col gap-7 justify-center items-center mt-[120px] ">
-        <div className=" text-5xl font-medium  pacifico-regular">
+    <section className=" lg:w-[70%] w-full mx-auto text-center">
+      <div className=" flex flex-col gap-7 justify-center items-center h-screen ">
+        <div className=" text-6xl font-medium  pacifico-regular">
           Meet our beautiful team
         </div>
         <div className=" text-md text-gray-600  ">
@@ -16,7 +16,7 @@ export default function IntroSection() {
           <Button variant="outline">Get in Touch</Button>
         </div>
         <div>
-          <ul className=" text-sm flex items-center gap-10 ">
+          <ul className=" text-xs lg:text-sm flex items-center gap-3 lg:gap-10 ">
             <li className=" flex items-center gap-1 ">
               <Laugh size={16} />
               <div>15+ Happy Client</div>

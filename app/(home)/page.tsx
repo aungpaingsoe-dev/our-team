@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <NavBar />
-      <main className=" w-[65%] mx-auto ">
+      <main className=" w-[95%] lg:w-[65%] mx-auto ">
         <IntroSection />
         <TeamSection />
         <ServiceSection />

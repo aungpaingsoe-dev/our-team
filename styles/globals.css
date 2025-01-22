@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -72,8 +73,13 @@
     font-style: normal;
   }
 
+  .jost {
+    font-family: "Jost", serif;
+    font-optical-sizing: auto;
+  }
+
   * {
-    @apply border-border varela-round-regular ;
+    @apply border-border jost;
   }
   body {
     @apply bg-background text-foreground;
