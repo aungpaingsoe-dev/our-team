@@ -99,7 +99,7 @@ export default function ContactSection() {
             viewBox="0 0 24 24"
             stroke="currentColor"
             aria-hidden="true"
-            stroke-width="2"
+            strokeWidth="2"
           >
             <path
               strokeLinecap="round"
